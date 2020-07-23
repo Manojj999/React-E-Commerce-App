@@ -4,7 +4,7 @@ import CustomButton from "../Custom-Button/CustomButton";
 import { auth, createUserProfileDocument } from "../../firebase/firebaseutil";
 import "./SignUp.scss";
 
-class SignUp extends React.Component{
+class SignUp extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -15,36 +15,35 @@ class SignUp extends React.Component{
     };
   }
 
-
-  handleSubmit = async event => {
+  handleSubmit = async (event) => {
     event.preventDefault();
     const { displayName, email, password, confirmPassword } = this.state;
-    if(password !== confirmPassword)
-    {
-        alert("Password Does't Matches");
-        return;
+    if (password !== confirmPassword) {
+      alert("Password Does't Matches");
+      return;
     }
 
-    try{
-        const {user} = await auth.createUserWithEmailAndPassword(email,password)
-       await createUserProfileDocument(user,{displayName});
-       this.setState({
+    try {
+      const { user } = await auth.createUserWithEmailAndPassword(
+        email,
+        password
+      );
+      await createUserProfileDocument(user, { displayName });
+      this.setState({
         displayName: "",
         email: "",
         password: "",
         confirmPassword: "",
-       })
+      });
+    } catch (error) {
+      console.error(error);
     }
-    catch(error){
-        console.error(error)
-    }
-   
-  }
+  };
 
-  handleChange = event => {
-    const{name,value} = event.target;
-    this.setState({[name]:value})
-  }
+  handleChange = (event) => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+  };
 
   render() {
     const { displayName, email, password, confirmPassword } = this.state;
@@ -58,7 +57,7 @@ class SignUp extends React.Component{
             name="displayName"
             value={displayName}
             onChange={this.handleChange}
-            label="display Name"
+            label="Display Name"
             required
           />
 
@@ -85,12 +84,11 @@ class SignUp extends React.Component{
             name="confirmPassword"
             value={confirmPassword}
             onChange={this.handleChange}
-            label="confirm Password"
+            label="Confirm Password"
             required
           />
 
           <CustomButton type="submit">SIGN UP</CustomButton>
-          
         </form>
       </div>
     );
