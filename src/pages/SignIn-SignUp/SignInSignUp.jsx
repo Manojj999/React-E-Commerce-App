@@ -2,7 +2,7 @@ import React from 'react';
 import './SignIn-SignUp.scss';
 import SignIn from '../../Components/SignIn/SignIn';
 import SignUp from '../../Components/SignUp/SignUp';
-function SignIn_SignUp() {
+function SignInSignUp() {
     return (
     <div className="signIn-signUp">
             <SignIn />
@@ -11,4 +11,4 @@ function SignIn_SignUp() {
     )
 }
 
-export default SignIn_SignUp
+export default SignInSignUp
