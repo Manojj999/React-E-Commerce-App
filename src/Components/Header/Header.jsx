@@ -19,7 +19,7 @@ function Header({currentUser,hidden}) {
             </Link>
             <div className="options">
                 <Link className="option" to="/shop">
-                    shop   
+                    Shop   
                 </Link>
                 <Link className="option" to="/shop">
                     Contact  
