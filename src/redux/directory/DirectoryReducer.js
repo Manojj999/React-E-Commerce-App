@@ -20,7 +20,8 @@ const INITIAL_STATE = {
         },
         {
           title: 'womens',
-          imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
+          // imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
+          imageUrl: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/190423-institute-sustanable-clothing-1556057761.png?crop=0.502xw:1.00xh;0.242xw,0&resize=640:*',
           size: 'large',
           id: 4,
           linkUrl: 'shop/womens'
